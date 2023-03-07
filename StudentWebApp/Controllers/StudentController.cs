@@ -16,5 +16,16 @@ namespace StudentWebApp.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult StudentEntry(Student s)
+        {
+            string name = s.name;
+            int rollno=s.rollno;
+            string prog = s.program;
+            bool job = s.isjob;
+            char gender = s.gender;
+            return View();
+        }
     }
 }
