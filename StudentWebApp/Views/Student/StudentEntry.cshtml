@@ -1,0 +1,33 @@
+﻿@model StudentWebApp.Models.Student
+@{
+    var plist = new List<SelectListItem>();
+    plist.Add(new SelectListItem { Text = "BCS", Value = "BCS" });
+    plist.Add(new SelectListItem { Text = "BSSE", Value = "BSSE" });
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StudentEntry</title>
+</head>
+<body>
+    <h2>Student Entry Form</h2>
+    @using (Html.BeginForm()) { 
+    <b>Roll No.:</b>@Html.EditorFor(model=>model.rollno)<br />
+        <b>Name:</b>@Html.TextBoxFor(model => model.name)<br />
+        <b>Program</b>@Html.DropDownListFor(model=>model.program,plist,"select")<br />
+        <fieldset>
+            <legend>Gender</legend>
+            @Html.RadioButtonFor(model=>model.gender,"M")<b>Male</b>
+            @Html.RadioButtonFor(model=>model.gender,"F")<b>Female</b>
+        </fieldset>
+
+        @Html.EditorFor(model=>model.isjob)<b>Job?</b><br />
+        <input type="submit" value="Submit" />
+    }
+    <div> 
+    </div>
+</body>
+</html>
