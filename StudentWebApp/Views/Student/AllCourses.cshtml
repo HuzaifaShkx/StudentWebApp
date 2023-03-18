@@ -1,0 +1,33 @@
+﻿@model List<StudentWebApp.Models.Course>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllCourses</title>
+</head>
+<body>
+    <b>All Courses</b>
+    <table border="1">
+        <tr>
+            <th>Course No.</th>
+            <th>Course Title</th>
+            <th>Credit Hours</th>
+        </tr>
+
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.courseCode</td>
+                <td>@s.courseTitle</td>
+                <td>@s.creditHour</td>
+               
+                @*localhost:32433/Student/DeleteStudent?rn=3 request format==query string object,,,?=query*@
+            </tr>
+        }
+    </table>
+    <div>
+    </div>
+</body>
+</html>
