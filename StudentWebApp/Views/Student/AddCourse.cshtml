@@ -1,0 +1,25 @@
+﻿@model StudentWebApp.Models.Course
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddCourse</title>
+</head>
+<body>
+    <b>ADD COURSE</b><br>
+
+    @using (Html.BeginForm("AddCourse", "Student", FormMethod.Post))
+    {
+        <b>Course Code:</b>@Html.EditorFor(model => model.courseCode)<br>
+        <b>Course Title:</b>@Html.EditorFor(model => model.courseTitle)<br>
+        <b>Credit Hour:</b>@Html.EditorFor(model => model.creditHour)<br>
+
+        <input type="submit" value="Save">
+    }
+
+    @Html.ActionLink("Show All Courses", "AllCourses")
+    <div>
+    </div>
+</body>
+</html>

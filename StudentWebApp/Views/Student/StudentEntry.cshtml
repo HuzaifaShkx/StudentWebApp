@@ -14,20 +14,22 @@
 </head>
 <body>
     <h2>Student Entry Form</h2>
-    @using (Html.BeginForm("StudentEntry","Student",FormMethod.Post)) { //action,controller,method
-    <b>Roll No.:</b>@Html.EditorFor(model=>model.rollno)<br />
+    @Html.ActionLink("Add Course", "AddCOurse", "Student")
+    @using (Html.BeginForm("StudentEntry", "Student", FormMethod.Post))
+    { //action,controller,method
+        <b>Roll No.:</b>@Html.EditorFor(model => model.rollno)<br />
         <b>Name:</b>@Html.TextBoxFor(model => model.name)<br />
-        <b>Program</b>@Html.DropDownListFor(model=>model.program,plist,"select")<br />
+        <b>Program</b>@Html.DropDownListFor(model => model.program, plist, "select")<br />
         <fieldset>
             <legend>Gender</legend>
-            @Html.RadioButtonFor(model=>model.gender,"M")<b>Male</b>
-            @Html.RadioButtonFor(model=>model.gender,"F")<b>Female</b>
+            @Html.RadioButtonFor(model => model.gender, "M")<b>Male</b>
+            @Html.RadioButtonFor(model => model.gender, "F")<b>Female</b>
         </fieldset>
 
-        @Html.EditorFor(model=>model.isjob)<b>Job?</b><br />
+        @Html.EditorFor(model => model.isjob)<b>Job?</b><br />
         <input type="submit" value="Submit" />
     }
-    <div> 
+    <div>
     </div>
 </body>
 </html>

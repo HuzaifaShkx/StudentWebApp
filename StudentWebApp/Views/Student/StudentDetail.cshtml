@@ -1,0 +1,32 @@
+﻿@model StudentWebApp.Models.Student
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StudentDetail</title>
+</head>
+<body>
+    <h1>Single Student Data</h1>
+    <b>Roll No:</b>@Model.rollno</br>
+    <b>Name:</b>@Model.name</br>
+    <b>Program:</b>@Model.program</br>
+    <b>Gender:</b>@if (Model.gender == 'M')
+    {
+    <b>Male</b>
+    }
+    else { 
+    <b>Female</b>
+    }</br>
+    <b>Job Holder:</b>@if (Model.isjob)
+            {
+<b>True</b>
+}
+else { 
+    <b>False</b>
+    }</br>
+    <div> 
+    </div>
+</body>
+</html>

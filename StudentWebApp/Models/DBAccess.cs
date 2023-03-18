@@ -11,8 +11,11 @@ namespace StudentWebApp.Models
     {
         //contains the information of server and data(connection information)
         static string constr = @"Data Source=DESKTOP-H5AAPPB; initial catalog=StudentDB;integrated security=true";//connection string
-        SqlConnection con = new SqlConnection(constr);
-        SqlCommand cmd = null;
+        static string constcourse = @"Data Source=DESKTOP-H5AAPPB; initial catalog=StudentDB;integrated security=true";//connection string
+        public SqlConnection con = new SqlConnection(constr);
+        public SqlConnection concourse = new SqlConnection(constcourse);
+        public SqlCommand cmd = null;
+        public SqlCommand cmdcourse = null;
         public void openConnection() {
             if (con.State == ConnectionState.Closed) {
                 con.Open(); 
@@ -30,6 +33,31 @@ namespace StudentWebApp.Models
         {
             cmd=new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
+
+        }
+
+        //for course
+
+        public void openConnectionc()
+        {
+            if (concourse.State == ConnectionState.Closed)
+            {
+                concourse.Open();
+            }
+        }
+
+        public void closeConnectionc()
+        {
+            if (concourse.State == ConnectionState.Open)
+            {
+                concourse.Close();
+            }
+        }
+
+        public void InsertUpdateDeletec(string query)
+        {
+            cmdcourse = new SqlCommand(query, concourse);
+            cmdcourse.ExecuteNonQuery();
 
         }
     }

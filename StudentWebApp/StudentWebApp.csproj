@@ -97,6 +97,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Course.cs" />
     <Compile Include="Models\DBAccess.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +106,10 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Student\StudentEntry.cshtml" />
+    <Content Include="Views\Student\AllStudents.cshtml" />
+    <Content Include="Views\Student\StudentDetail.cshtml" />
+    <Content Include="Views\Student\AddCourse.cshtml" />
+    <Content Include="Views\Student\AllCourses.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

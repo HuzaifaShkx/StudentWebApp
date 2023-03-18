@@ -1,0 +1,35 @@
+﻿@model List<StudentWebApp.Models.Student>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllStudents</title>
+</head>
+<body>
+    <h1>All Student Data</h1>
+    @Html.ActionLink("Create new Student", "StudentEntry", "Student")
+    <table border="1">
+        <tr>
+            <th>RollNo</th>
+            <th>Name</th>
+            <th>Program</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach(var s in Model)
+            {
+                <tr>
+                    <td>@s.rollno</td>
+                    <td>@s.name</td>
+                    <td>@s.program</td>
+                    <td>@Html.ActionLink("Delete", "DeleteStudent", new {rn=s.rollno })</td>@*Controller is optional*@ @*new{} takes the parameter*@
+                    @*localhost:32433/Student/DeleteStudent?rn=3 request format==query string object,,,?=query*@
+                    <td>@Html.ActionLink("Detail","StudentDetail",new {id=s.rollno})</td>
+                </tr>
+                    }
+        </table>
+</body>
+</html>
